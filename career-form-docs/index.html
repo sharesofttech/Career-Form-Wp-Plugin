@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Form — Plugin Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="frame">
+
+  <aside class="rail">
+    <div class="rail-head">
+      <span class="mark">CF</span>
+      <div class="rail-title">
+        <span class="rail-name">Career Form</span>
+        <span class="rail-sub">Plugin Guide</span>
+      </div>
+    </div>
+
+    <nav class="toc" id="toc">
+      <a href="#overview" class="toc-link">
+        <span class="toc-num">00</span> Overview
+      </a>
+      <a href="#fields" class="toc-link">
+        <span class="toc-num">01</span> Manage Form Fields
+      </a>
+      <a href="#add-field" class="toc-link">
+        <span class="toc-num">02</span> Add New Field
+      </a>
+      <a href="#applications" class="toc-link">
+        <span class="toc-num">03</span> Applications
+      </a>
+      <a href="#applicant-email" class="toc-link">
+        <span class="toc-num">04</span> Applicant Email
+      </a>
+      <a href="#admin-email" class="toc-link">
+        <span class="toc-num">05</span> Admin Copy Email
+      </a>
+    </nav>
+
+    <div class="rail-foot">
+      <span>career-form.php</span>
+      <span class="dot">·</span>
+      <span>WordPress plugin</span>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <header class="doc-header" id="overview">
+      <p class="kicker">Career Settings → Documentation</p>
+      <h1>Everything the Career Form plugin does, one screen at a time.</h1>
+      <p class="lede">
+        Career Form drops a ready-made application page onto your site. Activate it and WordPress
+        creates a Career page with the <code>[career_form]</code> shortcode already in place — no
+        page building required. This guide walks through the admin screens: the fields applicants
+        fill in, where submissions land, and how the email notifications work.
+      </p>
+      <div class="chip-row">
+        <span class="chip">Career_form shortcode</span>
+        <span class="chip">Built-in + custom fields</span>
+        <span class="chip">Applicant &amp; admin email</span>
+      </div>
+    </header>
+
+    <section class="entry" id="fields">
+      <div class="entry-head">
+        <span class="entry-num">01</span>
+        <div>
+          <h2>Manage Form Fields</h2>
+          <p class="entry-dek">The field table controls exactly what applicants see on the Career page.</p>
+        </div>
+      </div>
+
+      <figure class="shot">
+        <img src="images/01-manage-fields.png" alt="Career Settings screen listing built-in form fields: Name, Email, Contact Number, Qualification, Designation, Experience, Resume — all enabled.">
+        <figcaption>Career Settings → Manage Form Fields</figcaption>
+      </figure>
+
+      <p>
+        Seven fields ship with the plugin, and they're split into two tiers. <strong>Name, Email,
+        and Contact Number</strong> are locked — required for every application and can't be
+        disabled, since they're what you need to actually reach an applicant. <strong>Qualification,
+        Designation, Experience, and Resume</strong> are editable: toggle their visibility with the
+        eye icon, or open the pencil to rename a label or flip whether it's required.
+      </p>
+
+      <div class="note-grid">
+        <div class="note">
+          <span class="note-label">Locked fields</span>
+          <p>Name, Email, Contact Number — always required, always on.</p>
+        </div>
+        <div class="note">
+          <span class="note-label">Editable fields</span>
+          <p>Qualification, Designation, Experience, Resume — required and enabled can both be changed per field.</p>
+        </div>
+        <div class="note">
+          <span class="note-label">Reorder</span>
+          <p>Drag the four-arrow handle on the left of any row to change field order on the live form.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="entry" id="add-field">
+      <div class="entry-head">
+        <span class="entry-num">02</span>
+        <div>
+          <h2>Add New Field</h2>
+          <p class="entry-dek">Custom fields extend the application without touching code.</p>
+        </div>
+      </div>
+
+      <figure class="shot">
+        <img src="images/02-add-field.png" alt="Add New Field modal with Field Label input, Field Type dropdown set to Text, and checkboxes for Required field and Show on form.">
+        <figcaption>Manage Form Fields → + Add New Field</figcaption>
+      </figure>
+
+      <p>
+        Click <strong>+ Add New Field</strong> to open the modal. Give it a label — the placeholder
+        suggests things like Address, Age, or Expected Salary — and pick a field type from the
+        dropdown. Two checkboxes decide its behavior: <strong>Required field</strong> forces
+        applicants to fill it in before submitting, and <strong>Show on form</strong> controls
+        whether it appears at all, so you can stage a field before switching it on.
+      </p>
+
+      <ol class="steps">
+        <li><span>1</span>Name the field the way an applicant would recognize it.</li>
+        <li><span>2</span>Choose a field type from the dropdown.</li>
+        <li><span>3</span>Decide if it's required, and whether it should show immediately.</li>
+        <li><span>4</span>Save Field — it appears in the table alongside the built-ins.</li>
+      </ol>
+    </section>
+
+    <section class="entry" id="applications">
+      <div class="entry-head">
+        <span class="entry-num">03</span>
+        <div>
+          <h2>Applications</h2>
+          <p class="entry-dek">Every submission, with the resume one click away.</p>
+        </div>
+      </div>
+
+      <figure class="shot">
+        <img src="images/03-applications.png" alt="Applications table listing submitted candidates with columns for Name, Email, Qualification, Contact, Designation, Experience, Resume, Date, and Action.">
+        <figcaption>Career Settings → Applications</figcaption>
+      </figure>
+
+      <p>
+        Submissions land in a single table — name, email, qualification, contact number,
+        designation, and years of experience, all sortable at a glance. <strong>View Resume</strong>
+        opens the uploaded file directly; <strong>Delete</strong> removes an application for good.
+        Tick individual rows or use <strong>Select All</strong> to batch-manage a long list.
+      </p>
+    </section>
+
+    <section class="entry" id="applicant-email">
+      <div class="entry-head">
+        <span class="entry-num">04</span>
+        <div>
+          <h2>Mail Settings — Applicant Email</h2>
+          <p class="entry-dek">The automatic confirmation an applicant receives after submitting.</p>
+        </div>
+      </div>
+
+      <figure class="shot">
+        <img src="images/04-applicant-email.png" alt="Applicant Email tab with a toggle to send response mail automatically, From Email, From Name, Subject and Title fields, and a rich text content editor with a thank-you message.">
+        <figcaption>Mail Settings → Applicant Email</figcaption>
+      </figure>
+
+      <p>
+        With <strong>Send Response Mail</strong> checked, every applicant gets a receipt the moment
+        they submit. Set the sending address and display name, then write the subject, title, and
+        body in the rich text editor. Two placeholders do the personalizing:
+        <code>{name}</code> and <code>{designation}</code> — drop them anywhere in the subject or
+        content and the plugin fills in the applicant's own details.
+      </p>
+    </section>
+
+    <section class="entry" id="admin-email">
+      <div class="entry-head">
+        <span class="entry-num">05</span>
+        <div>
+          <h2>Mail Settings — Admin Copy Email</h2>
+          <p class="entry-dek">A separate notification that lands in your own inbox.</p>
+        </div>
+      </div>
+
+      <figure class="shot">
+        <img src="images/05-admin-copy-email.png" alt="Admin Copy Email tab with Send Admin Copy toggle, Recipient Email field, Subject and Title fields, and a content editor showing a table with applicant details and a resume link placeholder.">
+        <figcaption>Mail Settings → Admin Copy Email</figcaption>
+      </figure>
+
+      <p>
+        This tab is independent of the applicant email — its own recipient, its own format. Turn on
+        <strong>Send Admin Copy</strong> and list one or more addresses in Recipient Email,
+        comma-separated; leave it blank and it falls back to the site's admin address. The content
+        editor supports the same <code>{name}</code> / <code>{designation}</code> placeholders, plus
+        <code>{resume}</code>, which renders as a plain link so the resume opens straight in the
+        browser tab rather than forcing a download — as long as your server serves PDFs and DOCs
+        inline.
+      </p>
+
+      <div class="note-grid">
+        <div class="note">
+          <span class="note-label">Delivery</span>
+          <p>Both emails are sent through WordPress's built-in <code>wp_mail()</code> — no SMTP setup or extra plugin required. If a site's host blocks PHP's mail function, use a general-purpose SMTP plugin alongside Career Form; this plugin doesn't need its own SMTP settings to work.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="doc-footer">
+      <p>Career Form — Plugin admin reference.</p>
+      <button id="top-btn" class="top-btn">Back to top ↑</button>
+    </footer>
+
+  </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
